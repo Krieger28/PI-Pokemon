@@ -6,16 +6,16 @@ const {
   combineDbApi,
   getPokeByName,
   createPokes,
+  allDbData,
 } = require("../controllers/pokemon");
 const e = require("express");
 const { getApiTypes } = require("../controllers/Type");
-
 
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 
 const router = Router();
-router.use(require('body-parser').json()); 
+router.use(require("body-parser").json());
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 
@@ -26,23 +26,22 @@ router.get("/pokemons", async (req, res) => {
       if (pokename) {
         return res.status(200).send(pokename);
       }
-      const pokenamedb = await allDbData().then((r) =>
-        r.filter((pokdb) =>
-          pokdb.name
-            .toLowerCase()
-            .trim()
-            .includes(req.query.name.toLowerCase().trim())
-        )
-      );
-
-      if (pokenamedb) {
-        return res.status(200).send(await pokenamedb);
-      }
     } else {
       res.status(200).send(await combineDbApi());
     }
   } catch (error) {
-    res.status(404).send("NO POKEMONS HERE ONLY SOLITUDE");
+    const pokenamedb = await allDbData().then((r) =>
+      r.filter(
+        (pokdb) =>
+          pokdb.name.toLowerCase().trim() ===
+          req.query.name.toLowerCase().trim()
+      )
+    );
+
+    if (pokenamedb.length > 0) {
+      return res.status(200).send(await pokenamedb);
+    }
+    return res.status(404).send("NO POKEMONS HERE ONLY SOLITUDE");
   }
 });
 

@@ -62,7 +62,9 @@ const getPokeByName = async (name) => {
   const pokedata = await axios
     .get(`https://pokeapi.co/api/v2/pokemon/${nicename}`)
     .then((poke) => poke.data);
-  const poke = [];
+    if(pokedata) {
+      console.log(pokedata)
+      const poke = [];
   poke.push(pokedata);
   return poke.map((p) => {
     return {
@@ -81,9 +83,14 @@ const getPokeByName = async (name) => {
           : [p.types[0].type.name, p.types[1].type.name],
     };
   });
+    } else {
+      console.log('este es el else! :' + name)
+      return name;
+    }
+  
 };
 
-const createPokes = async ({
+const createPokes = async (
   name,
   hp,
   attack,
@@ -92,8 +99,9 @@ const createPokes = async ({
   height,
   weight,
   types,
-}) => {
+) => {
   try {
+    console.log(name)
     const newPokemon = await Pokemon.create({
       name,
       hp,
@@ -103,7 +111,7 @@ const createPokes = async ({
       height,
       weight,
     });
-
+    console.log(newPokemon.name)
     await Type.findAll({
       where: {
         name: types,
@@ -112,7 +120,7 @@ const createPokes = async ({
 
     return "Your pokemon works!!!!! mwemmddmdmddmmmh";
   } catch (err) {
-    console.error("error in creating pokemon" + err);
+    console.error("error in creating pokemon " + err);
   }
 };
 
