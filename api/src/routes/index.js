@@ -1,23 +1,86 @@
-const { Router } = require('express');
-const { Pokemon , Type } = require('../db');
+const { Router } = require("express");
+const { Pokemon, Type } = require("../db");
 const axios = require("axios");
-const { allApiData } = require('../controllers/pokemon');
+const {
+  allApiData,
+  combineDbApi,
+  getPokeByName,
+  createPokes,
+} = require("../controllers/pokemon");
+const e = require("express");
+const { getApiTypes } = require("../controllers/Type");
+
 
 // Importar todos los routers;
 // Ejemplo: const authRouter = require('./auth.js');
 
-
 const router = Router();
-
+router.use(require('body-parser').json()); 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 
+router.get("/pokemons", async (req, res) => {
+  try {
+    if (req.query.name) {
+      const pokename = await getPokeByName(req.query.name); //need try/catch to work
+      if (pokename) {
+        return res.status(200).send(pokename);
+      }
+      const pokenamedb = await allDbData().then((r) =>
+        r.filter((pokdb) =>
+          pokdb.name
+            .toLowerCase()
+            .trim()
+            .includes(req.query.name.toLowerCase().trim())
+        )
+      );
 
+      if (pokenamedb) {
+        return res.status(200).send(await pokenamedb);
+      }
+    } else {
+      res.status(200).send(await combineDbApi());
+    }
+  } catch (error) {
+    res.status(404).send("NO POKEMONS HERE ONLY SOLITUDE");
+  }
+});
 
+router.get("/pokemons/:id", async (req, res) => {
+  const { id } = req.params;
+  const allPokes = await combineDbApi();
+  try {
+    if (id) {
+      const pokeID = allPokes.filter((p) => p.id == id);
 
-router.get('/', async (req, res) => {
-    res.status(200).send(await allApiData())
-})
+      pokeID.length
+        ? res.status(200).json(pokeID)
+        : res.status(404).send("Pokemon not found");
+    }
+  } catch (err) {
+    console.error("error in router /:id" + err);
+  }
+});
 
+router.post("/pokemons", async (req, res) => {
+  const { name, hp, attack, defense, speed, height, weight, types } = req.body;
+  const newpoke = await createPokes(
+    name,
+    hp,
+    attack,
+    defense,
+    speed,
+    height,
+    weight,
+    types
+  );
+  return res.status(201).json(newpoke);
+});
+
+//--------------------------Type----------------------------//
+
+router.get("/types", async (req, res) => {
+  return res.status(200).json(await getApiTypes());
+});
 
 module.exports = router;
