@@ -22,11 +22,14 @@ const reducer = (state = initialState, action) => {
         pokemon: {},
       };
     case GET_POKEMON_BY_ID: //get by id
-      return {};
+      return {
+        ...state,
+        pokemon: action.payload,
+      };
     case GET_POKEMON_BY_NAME: //get by names
       return {
         ...state,
-        allPokemons: action.payload,
+        //allPokemons: action.payload,  // useless???
         pokemon: action.payload,
       };
 

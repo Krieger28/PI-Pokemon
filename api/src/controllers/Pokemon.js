@@ -4,7 +4,7 @@ const axios = require("axios");
 const allApiData = async () => {
   try {
     const apidata = await axios.get(
-      "https://pokeapi.co/api/v2/pokemon?limit=48"
+      "https://pokeapi.co/api/v2/pokemon?limit=40"
     );
     const apilinks = apidata.data.results.map((p) => {
       return p.url;

@@ -18,3 +18,9 @@ export const getPokemonByID = (id) => (dispatch) => {
     .then((res)=> res.json())
     .then((json) => dispatch({type: GET_POKEMON_BY_ID, payload: json}));
 };
+
+export const getPokemonByName = (name) => (dispatch) => {
+    return fetch(`http://localhost:3001/pokemons/?name=${name}`)
+    .then((res) => res.json())
+    .then((json) => dispatch({type: GET_POKEMON_BY_NAME, payload:json}));
+};
