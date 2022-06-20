@@ -4,7 +4,7 @@ const axios = require("axios");
 const allApiData = async () => {
   try {
     const apidata = await axios.get(
-      "https://pokeapi.co/api/v2/pokemon?limit=40"
+      "https://pokeapi.co/api/v2/pokemon?limit=151"
     );
     const apilinks = apidata.data.results.map((p) => {
       return p.url;
@@ -118,7 +118,7 @@ const createPokes = async (
       },
     }).then((res) => newPokemon.addType(res));
 
-    return "Your pokemon works!!!!! mwemmddmdmddmmmh";
+    return "Your Pokemon was created!";
   } catch (err) {
     console.error("error in creating pokemon " + err);
   }

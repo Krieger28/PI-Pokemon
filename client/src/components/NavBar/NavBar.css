@@ -1,10 +1,10 @@
-.pagination{
+.Nav{
     display: inline-flex;
     list-style: none;
     justify-content: center;
     padding: 0%;
 }
-.pagButton{
+.linkCss{
   background-color:  #91a90c;
   border-color: #bdd21d;
  border-radius: 10px;
@@ -16,7 +16,17 @@
   font-size: 20px;
 }
 
-.pagButton:hover {
+.liNav{
+    background-color:  #91a90c;
+    border-color: #bdd21d;
+   border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 15px;
+  }
+
+.linkCss:hover {
     background-color:  #76890b;
     border-color: #8a9a16;
     cursor: pointer;

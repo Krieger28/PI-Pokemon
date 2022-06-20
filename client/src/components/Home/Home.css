@@ -1,0 +1,18 @@
+.Container{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.CardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.LinkCard{
+    font-family: 'roboto', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+}

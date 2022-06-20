@@ -4,6 +4,9 @@ import { getAllPokemons } from "../../redux/actions";
 import Cards from "../Cards/cards";
 import { Link } from "react-router-dom";
 import Pagination from "../pagination/pagination";
+import "./Home.css";
+import NavBar from "../NavBar/NavBar";
+import SearchBar from "../SearchBar/SearchBar";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -22,42 +25,62 @@ export default function Home() {
     indexOfLastPokemon
   );
 
+
+//-------------UseEffect---------------//
+
   useEffect(() => {
     dispatch(getAllPokemons());
     setRenderPage(allPokemons);
     setCurrentPage(1);
     return () => {};
-  }, [dispatch]);
+  }, []);
+
+//-------------Filters---------------//
+
+
+
+
+
 
   return (
-    <div className="Container">
-      <div>
-        <Pagination
-          className="pagination"
-          pokemonsPerPage={pokemonsPerPage}
-          allPokemons={allPokemons?.length}
-          pagination={pagination}
-        />
-      </div>
-
-      <div className="CardContainer">
-        {currentPokemon?.map((p) => {
-          return (
+    <div>
+      {allPokemons && allPokemons !== "NO POKEMONS HERE ONLY SOLITUDE" ? (
+        <div className="Container">
             <div>
-              <Link className="LinkCard" to={`/pokemons/${p.id}`}>
-                <Cards
-                  className="Cards"
-                  key={p.id}
-                  name={p.name}
-                  img={p.sprite}
-                  types={p.types + " "}
-                  id={p.id}
-                />
-              </Link>
-            </div>
-          );
-        })}
-      </div>
+          <NavBar/>
+          <SearchBar />
+          </div>
+          <div>
+            <Pagination
+              className="pagination"
+              pokemonsPerPage={pokemonsPerPage}
+              allPokemons={allPokemons?.length}
+              pagination={pagination}
+            />
+          </div>
+
+          <div className="CardContainer">
+            {currentPokemon?.map((p) => {
+              return (
+                <div>
+                  <Link className="LinkCard" to={`/pokemons/${p.id}`}>
+                    <Cards
+                      className="Cards"
+                      key={p.id}
+                      name={p.name}
+                      img={p.sprite}
+                      types={p.types + " "}
+                      id={p.id}
+                    />
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ) : (
+        <h3>ERROR 404</h3>
+      )}
     </div>
   );
 }

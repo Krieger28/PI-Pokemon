@@ -1,5 +1,5 @@
 import React from "react";
-//import cardscss from "cardcsspinga";
+import "./cards.css";
 //import imgcardBG from "pinga";
 
 export default function Cards({ name, img, types }) {

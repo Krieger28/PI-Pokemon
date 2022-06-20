@@ -22,7 +22,7 @@ export default function Details() {
           <div className="ContainerDetails">
             <h3 className="PokeID">ID: {pokeDetail[0].id}</h3>
             <h3 className="PokeName">{pokeDetail[0].name}</h3>
-            <img className="imgPoke" src={pokeDetail[0].sprite} />
+            <img className="imgPoke" src={pokeDetail[0].sprite} alt='img not found'/>
             <h3>TYPES: {pokeDetail[0].types + " "}</h3>
             <div className="statsData">
               <h3>ATK: {pokeDetail[0].attack}</h3>
@@ -41,7 +41,7 @@ export default function Details() {
           <div className="ContainerDetails">
             <h3 className="PokeID">ID: ???</h3>
             <h3 className="PokeName">████████</h3>
-            <img className="imgPoke" src={img} />
+            <img className="imgPoke" src={img} alt='not found'/>
             <h3>TYPES: ████████</h3>
             <div className="statsData">
               <h3>ATK: ???</h3>

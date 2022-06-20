@@ -11,6 +11,7 @@ const initialState = {
   pokemon: {},
   types: [],
   filter: [],
+  newPokemon:[],
 };
 
 const reducer = (state = initialState, action) => {
@@ -29,7 +30,7 @@ const reducer = (state = initialState, action) => {
     case GET_POKEMON_BY_NAME: //get by names
       return {
         ...state,
-        //allPokemons: action.payload,  // useless???
+        allPokemons: action.payload,
         pokemon: action.payload,
       };
 
@@ -39,7 +40,10 @@ const reducer = (state = initialState, action) => {
         types: action.payload,
       };
     case POST_CREATE_POKEMON: //create pokemon
-      return {};
+      return {
+        ...state,
+        newPokemon:action.payload,
+      };
     default:
       return state;
   }
