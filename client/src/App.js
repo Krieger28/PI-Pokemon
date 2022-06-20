@@ -1,9 +1,20 @@
-import './App.css';
-
+import "./App.css";
+import React, { Fragment } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LandingPage from "./components/LandingPage/landingPage";
 function App() {
   return (
     <div className="App">
-      <h1>Henry Pokemon</h1>
+      <Fragment>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<LandingPage/>} />
+            <Route path="/Home" element={<eefdf />} />
+            <Route path="/Pokemons/:id" element={<fdsfdf />} />
+            <Route path="/Create" element={<sdfdfd />} />
+          </Routes>
+        </BrowserRouter>
+      </Fragment>
     </div>
   );
 }
