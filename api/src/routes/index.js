@@ -30,14 +30,45 @@ router.get("/pokemons", async (req, res) => {
       res.status(200).send(await combineDbApi());
     }
   } catch (error) {
-    const pokenamedb = await allDbData().then((r) =>
-      r.filter(
-        (pokdb) =>
-          pokdb.name.toLowerCase().trim() ===
-          req.query.name.toLowerCase().trim()
+    const pokenamedb = await allDbData()
+      .then((r) =>
+        r.filter(
+          (pokdb) =>
+            pokdb.name.toLowerCase().trim() ===
+            req.query.name.toLowerCase().trim()
+        )
       )
-    );
-
+      .then((pok) =>
+      pok[0].types.length > 1
+          ? [
+              {
+                id: pok[0].id,
+                name: pok[0].name,
+                hp: pok[0].hp,
+                attack: pok[0].attack,
+                defense: pok[0].defense,
+                speed: pok[0].speed,
+                height: pok[0].height,
+                weight: pok[0].weight,
+                types: [pok[0].types[0].name, pok[0].types[1].name],
+              },
+            ]
+          : [
+              {
+                id: pok[0].id,
+                name: pok[0].name,
+                hp: pok[0].hp,
+                attack: pok[0].attack,
+                defense: pok[0].defense,
+                speed: pok[0].speed,
+                height: pok[0].height,
+                weight: pok[0].weight,
+                
+                types: [pok[0].types[0].name]
+              },
+            ]
+      );
+    console.log(pokenamedb);
     if (pokenamedb.length > 0) {
       return res.status(200).send(await pokenamedb);
     }

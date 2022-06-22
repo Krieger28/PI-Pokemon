@@ -4,16 +4,18 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage/landingPage";
 import Home from "./components/Home/Home";
 import Details from "./components/Details/Details";
+import Create from "./components/Create/Create";
 function App() {
   return (
     <div className="App">
       <Fragment>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<LandingPage/>} />
-            <Route path="/Home" element={<Home />} />
+            <Route exact path="/" element={<LandingPage/>} />
+            <Route exact path="/Home" element={<Home />} />
+            <Route exact path="/Create" element={<Create />} />
             <Route path="/Pokemons/:id" element={<Details />} />
-            <Route path="/Create" element={<sdfdfd />} />
+            
           </Routes>
         </BrowserRouter>
       </Fragment>

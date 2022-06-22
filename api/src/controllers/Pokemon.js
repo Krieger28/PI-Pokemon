@@ -4,7 +4,7 @@ const axios = require("axios");
 const allApiData = async () => {
   try {
     const apidata = await axios.get(
-      "https://pokeapi.co/api/v2/pokemon?limit=151"
+      "https://pokeapi.co/api/v2/pokemon?limit=43"
     );
     const apilinks = apidata.data.results.map((p) => {
       return p.url;
@@ -62,32 +62,31 @@ const getPokeByName = async (name) => {
   const pokedata = await axios
     .get(`https://pokeapi.co/api/v2/pokemon/${nicename}`)
     .then((poke) => poke.data);
-    if(pokedata) {
-      console.log(pokedata)
-      const poke = [];
-  poke.push(pokedata);
-  return poke.map((p) => {
-    return {
-      id: p.id,
-      name: p.name,
-      hp: p.stats[0].base_stat,
-      attack: p.stats[1].base_stat,
-      defense: p.stats[2].base_stat,
-      speed: p.stats[5].base_stat,
-      height: p.height,
-      weight: p.weight,
-      sprite: p.sprites.other["official-artwork"].front_default,
-      types:
-        p.types.length < 2
-          ? [p.types[0].type.name]
-          : [p.types[0].type.name, p.types[1].type.name],
-    };
-  });
-    } else {
-      console.log('este es el else! :' + name)
-      return name;
-    }
-  
+  if (pokedata) {
+    console.log(pokedata);
+    const poke = [];
+    poke.push(pokedata);
+    return poke.map((p) => {
+      return {
+        id: p.id,
+        name: p.name,
+        hp: p.stats[0].base_stat,
+        attack: p.stats[1].base_stat,
+        defense: p.stats[2].base_stat,
+        speed: p.stats[5].base_stat,
+        height: p.height,
+        weight: p.weight,
+        sprite: p.sprites.other["official-artwork"].front_default,
+        types:
+          p.types.length < 2
+            ? [p.types[0].type.name]
+            : [p.types[0].type.name, p.types[1].type.name],
+      };
+    });
+  } else {
+    console.log("este es el else! :" + name);
+    return name;
+  }
 };
 
 const createPokes = async (
@@ -98,10 +97,9 @@ const createPokes = async (
   speed,
   height,
   weight,
-  types,
+  types
 ) => {
   try {
-    console.log(name)
     const newPokemon = await Pokemon.create({
       name,
       hp,
@@ -111,7 +109,7 @@ const createPokes = async (
       height,
       weight,
     });
-    console.log(newPokemon.name)
+
     await Type.findAll({
       where: {
         name: types,

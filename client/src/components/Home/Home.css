@@ -1,18 +1,79 @@
-.Container{
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.Container {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.CardContainer{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: space-between;
+.CardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
 }
 
-.LinkCard{
-    font-family: 'roboto', sans-serif;
-    text-decoration: none;
-    cursor: pointer;
+.LinkCard {
+  font-family: "roboto", sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.HomeBG {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ruleroffilters{
+    float: right;
+    margin-top: 40px;
+    margin-right: 50px;
+    background-color: #91a90c;
+    border-radius: 10px;
+}
+
+.error{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.divAllFilters {
+  list-style: none;
+  justify-content: center;
+  padding: 0%;
+  
+}
+
+.filterContainer {
+  display: inline-flex;
+  list-style: none;
+  justify-content: center;
+  padding: 0%;
+}
+
+.filtros {
+  background-color: #91a90c;
+  border-color: #bdd21d;
+  border-radius: 6px;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.filtros:hover {
+  background-color: #76890b;
+  border-color: #8a9a16;
+  cursor: pointer;
 }
