@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { createPokemon, getTypes } from "../../redux/actions/index";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import bgimg from "../../utils/images/createimg.png"
 
 import "./Create.css";
 
@@ -111,7 +112,9 @@ export default function Create() {
   }
 
   return (
-    <div className="divBG">
+    
+    <div>
+      <img className="imgbg" src={bgimg} alt="www"/>
       <div className="formDiv">
         <h3>Create your pokemon!</h3>
         <form className="formCss" onSubmit={(e) => handleSubmit(e)}>
@@ -217,7 +220,7 @@ export default function Create() {
                         handleDelete(el);
                       }}
                     >
-                      x
+                      ✖
                     </button>
                   </div>
                 );

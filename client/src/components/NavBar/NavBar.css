@@ -15,20 +15,23 @@
   text-decoration: none;
   display: inline-block;
   font-size: 20px;
+  border-style: solid;
 }
 
 .liNav{
     background-color:  #91a90c;
-    border-color: #bdd21d;
+    border-color: #bfd51c;
    border-radius: 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     margin: 15px;
+    
   }
 
 .linkCss:hover {
     background-color:  #76890b;
-    border-color: #8a9a16;
+    border-color: #b1c51d;
     cursor: pointer;
+    border-style: solid;
 }

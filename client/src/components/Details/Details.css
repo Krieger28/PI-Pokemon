@@ -1,3 +1,138 @@
-.imgPoke{
-
+.backgroundCard{
+    background-image: url("../../utils/images/detailsimg.jpg");
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.ContainerDetails{
+    /* display: flex;
+  flex-wrap: wrap; */
+  margin-top: 150px;
+  border-radius: 60px;
+  border-color: black;
+  
+  justify-content: space-around;
+  align-items: right;
+  width: 400px;
+  height: 700px;
+  padding: 10px;
+  margin-left: 750px;
+  justify-content: center;
+  background-color: rgb(211, 10, 74);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.imgPoke {
+    height: 330px;
+    /* margin-top:179px; */
+    z-index: -1;
+
+    border-radius: 40px;
+    background-color: rgb(34, 196, 234);
+  }
+
+  .PokeID{
+    float: left;
+    background-color: rgb(8, 64, 253);
+    margin-top: 20px;
+    margin-left: 30px;
+    font-style: initial;
+    width: 60px;
+    color: #eeeeee;
+    font-size: medium;
+    border-radius: 100%;
+  }
+
+.PokeName{
+
+    background-color: rgb(225, 201, 170);
+    margin-top: 70px;
+    border-radius: 5px;
+    font-style: oblique;
+    display: inline-block;
+    margin-right: 60px;
+    width: 160px;
+}
+
+.statsData{
+    /* float: right; */
+    float: left;
+    margin-left: 40px;
+    background-color: rgb(95, 196, 128);
+    height: 106px;
+    width: 200px;
+    border-radius: 5px;
+    
+}
+
+
+/* R: 247
+G: 192
+B:: 91 */
+.types{
+    border-radius: 15px;
+margin-left: 100px;
+    width: 200px;
+    background-color: tomato;
+}
+
+.twostats{
+    float: left;
+    margin-left: 20px;
+   
+}
+.otherData{
+    background-color: darkgoldenrod;
+float: right;
+margin-right: 40px;
+border-radius: 5px;
+width: 100px;
+}
+
+  .buttonGoBack{
+    background-color: #23421c ;
+    font-family: 'VT323', monospace;
+    color: white;
+    font-size: 30px;
+    border-radius: 10px;
+    border-color: #51562e;
+
+    float: center;
+    margin-top:30px;
+    margin-left: 140px;
+  }
+
+
+
+
+  .buttonGoBack:hover{
+    background-color: rgb(67, 164, 45) ;
+    font-family: 'VT323', monospace;
+    color: white;
+    font-size: 30px;
+    border-radius: 10px;
+    border-color: #79823c;
+    cursor: pointer;
+
+    float: center;
+    margin-top:30px;
+    margin-left: 140px;
+  }
+
+
+
+
+
+
+
+
+
+/* .imgPoke{
+
+} */

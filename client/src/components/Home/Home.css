@@ -64,7 +64,7 @@
 
 .filtros {
   background-color: #91a90c;
-  border-color: #bdd21d;
+  border-color: hsl(67, 76%, 47%);
   border-radius: 6px;
   padding: 8px 8px;
   text-align: center;

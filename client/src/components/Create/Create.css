@@ -1,0 +1,132 @@
+.formDiv {
+    right: 0;
+    margin: 20px;
+    max-width: 350px;
+    padding: 16px;
+    color:white;
+    background-color:rgb(5, 86, 24);
+    box-shadow: 3px 0px 10px 4px #050505;
+    border-radius: 10px;
+    margin-left:750px;
+   font-family: 'Roboto', sans-serif;
+   margin-top: 0px;
+   
+} 
+
+
+.div_types{
+    justify-content: center;
+    display: inline-block;
+    margin-inline: 20px;
+}
+
+.x_button{
+    cursor: pointer;
+    color: darkgray;
+    background-color: #050505;
+    /* font-style: calc(); */
+}
+
+.x_button:hover{
+    border-color: #ff0000;
+    cursor: pointer;
+    color: rgb(215, 213, 213);
+    background-color: #ff0000;
+}
+
+
+
+.imgbg{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+  .formStyle {
+    display: block;
+    right: 0;
+    margin: 20px;
+    max-width: 300px;
+    padding: 16px;
+    color: white;
+    box-shadow: 3px 0px 10px 4px #050505;
+  }
+  
+
+
+
+
+  .buttonVolverForm{
+    margin-left: 26px;
+    display: flex;
+    color: white;
+    background-color:  rgb(17, 161, 4) ;
+    color:rgb(0, 0, 0);
+     border-radius: 10px;
+    text-align: center;
+    justify-content: space-between;
+    font-size: large;
+    padding: 8px 8px;
+    text-decoration: none;
+    font-family: 'Shippori Antique B1', sans-serif;
+    margin-left: 290px;
+    
+  }
+
+
+  .buttonVolverForm:hover{
+    margin-left: 26px;
+    display: flex;
+    color: white;
+    background-color:  rgb(27, 101, 20) ;
+    color:rgb(0, 0, 0);
+     border-radius: 10px;
+    text-align: center;
+    justify-content: space-between;
+    font-size: large;
+    padding: 8px 8px;
+    text-decoration: none;
+    font-family: 'Shippori Antique B1', sans-serif;
+    margin-left: 290px;
+    
+  }
+  /* R: 126
+G: 206
+B: 47 */
+  
+  .buttonCreate{
+    background-color:  rgb(23, 236, 4) ;
+    border-radius: 50px;
+    color: white;
+    padding: 8px 8px;
+    text-align: center;
+    font-size: larger;
+    text-decoration: none;
+    display: inline-block;
+    
+    color:black;
+  }
+  
+  .buttonCreate:hover{
+    background-color:  rgb(9, 113, 0) ;
+    border-radius: 50px;
+    color: white;
+    padding: 8px 8px;
+    text-align: center;
+    font-size: larger;
+    text-decoration: none;
+    display: inline-block;
+    
+    color:black;
+  }
+
+
+
+  .inputForm:invalid{
+    background-color: red;
+  }
