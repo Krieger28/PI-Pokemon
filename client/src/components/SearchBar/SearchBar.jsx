@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { getPokemonByName } from "../../redux/actions";
 import "./SearchBar.css";
 
+
 export default function SearchBar() {
   const dispatch = useDispatch();
   const [name, setName] = useState("");

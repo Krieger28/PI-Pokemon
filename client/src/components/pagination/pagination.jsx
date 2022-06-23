@@ -19,6 +19,7 @@ export default function Pagination({pokemonsPerPage,allPokemons,pagination}){
              }
          </ul>
          </nav>
+         
     
  )
 }

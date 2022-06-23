@@ -10,6 +10,7 @@ import {
   FILTER_BY_TYPES,
 } from "../actions";
 
+
 const initialState = {
   allPokemons: [],
   pokemon: {},

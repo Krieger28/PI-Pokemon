@@ -1,7 +1,8 @@
 import React from "react";
 import "./cards.css";
 import GP from "../../utils/images/waving_pchita1_sillhouette.png";
-//import imgcardBG from "pinga";
+
+
 
 export default function Cards({id, name, img, types }) {
   const dbtypes = typeof(types[0]) === "string" ? types.map(type=> type + " ") : types.map(type=> type.name + " ");

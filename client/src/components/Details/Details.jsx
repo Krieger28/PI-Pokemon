@@ -40,6 +40,7 @@ export default function Details() {
               <h3>DEF: {pokeDetail[0].defense}</h3>
               <h3>SPD: {pokeDetail[0].speed}</h3>
               </div>
+              
             </div>
             <div className="otherData">
               <h3>HT: {pokeDetail[0].height}</h3>
@@ -49,6 +50,7 @@ export default function Details() {
               <button className="buttonGoBack">Back</button>
             </Link>
           </div>
+
         ) : (
           <div className="ContainerDetails">
             <h3 className="PokeID">ID: ???</h3>

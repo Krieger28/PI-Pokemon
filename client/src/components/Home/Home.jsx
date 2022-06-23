@@ -30,6 +30,7 @@ export default function Home() {
     setCurrentPage(pageNumber);
   };
 
+  
   const currentPokemon = allPokemons.slice(
     indexOfFirstPokemon,
     indexOfLastPokemon

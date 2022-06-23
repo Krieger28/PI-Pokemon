@@ -10,9 +10,9 @@ import reportWebVitals from './reportWebVitals';
 render(
   <StrictMode>
     <Provider store={store}>
-      {/* <BrowserRouter> */}
+   
         <App />
-      {/* </BrowserRouter> */}
+     
     </Provider>
   </StrictMode>,
   document.getElementById('root')
