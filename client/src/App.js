@@ -11,11 +11,10 @@ function App() {
       <Fragment>
         <BrowserRouter>
           <Routes>
-            <Route exact path="/" element={<LandingPage/>} />
+            <Route exact path="/" element={<LandingPage />} />
             <Route exact path="/Home" element={<Home />} />
             <Route exact path="/Create" element={<Create />} />
             <Route path="/Pokemons/:id" element={<Details />} />
-            
           </Routes>
         </BrowserRouter>
       </Fragment>

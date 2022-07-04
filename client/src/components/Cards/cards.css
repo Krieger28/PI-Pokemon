@@ -1,16 +1,12 @@
 .Cards {
-  border-color: #97ae16;
+  border-color: hsl(69, 78%, 38%);
   border-radius: 30px;
   width: 250px;
   height: 300px;
   background-color: #798d09;
   border-style: solid;
   margin: 30px;
-  
-
-
 }
-
 
 .Cards:hover {
   border-color: rgb(91, 189, 134);

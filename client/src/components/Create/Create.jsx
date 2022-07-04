@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { createPokemon, getTypes } from "../../redux/actions/index";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import bgimg from "../../utils/images/createimg.png"
+import bgimg from "../../utils/images/createimg.png";
 
 import "./Create.css";
 
@@ -112,14 +112,13 @@ export default function Create() {
   }
 
   return (
-    
     <div>
-      <img className="imgbg" src={bgimg} alt="www"/>
+      <img className="imgbg" src={bgimg} alt="www" />
       <div className="formDiv">
         <h3>Create your pokemon!</h3>
         <form className="formCss" onSubmit={(e) => handleSubmit(e)}>
           <div className="divForm">
-            <label>Name:</label> <br /> 
+            <label>Name:</label> <br />
             <input
               className="inputForm"
               type="text"
@@ -200,14 +199,11 @@ export default function Create() {
               <option value="default">-Selection of Type-</option>
               {types &&
                 types.map((poketypes) => (
-                    
-                  <option value={poketypes}  key={poketypes.id}>
+                  <option value={poketypes} key={poketypes.id}>
                     {poketypes}
-                
                   </option>
-                  
                 ))}
-                {errors.types && <p>{errors.types}</p>}
+              {errors.types && <p>{errors.types}</p>}
             </select>
             <div className="div">
               {input.types.map((el) => {
@@ -227,12 +223,12 @@ export default function Create() {
               })}
             </div>
             <br />
-
           </div>
           <button className="buttonCreate" type="submit">
             Create Pokemon!
           </button>
-          <br /><br />
+          <br />
+          <br />
           {/* <button disabled type="submit">Rellena los campos!</button> */}
           <Link to={"/home"}>
             <button className="buttonVolverForm">Back</button>
@@ -242,4 +238,3 @@ export default function Create() {
     </div>
   );
 }
-

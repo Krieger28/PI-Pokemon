@@ -9,46 +9,37 @@
   margin-right: auto;
 }
 
-
 .pokeButton {
-    position: relative;
+  position: relative;
   top: 200px;
   width: 20%;
-  
 }
 .pokeButton:hover {
   cursor: pointer;
   opacity: 0;
-  
+
   /* background-image: url("../../utils/images/gifPokeball.gif"); */
 }
 
 .activebutton {
-    position: relative;
-    position: absolute;
-    
-    top: 200px;
-    
+  position: relative;
+  position: absolute;
+
+  top: 200px;
+
   width: 20%;
   /* top: 0px;
   align-self: center; */
   cursor: pointer;
 }
 
-.mergePokes{
+.mergePokes {
   position: relative;
   top: 0;
   left: 0;
 }
 
-
-
-
-
-
-
-
-.merge{
+.merge {
   position: relative;
   top: 0;
   left: 0;

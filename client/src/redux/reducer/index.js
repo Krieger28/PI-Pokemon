@@ -90,12 +90,12 @@ const reducer = (state = initialState, action) => {
     case FILTER_BY_NAME:
       const PokemonFilteredByName =
         action.payload === "A-Z"
-          ? state.allPokemons.sort((a, z) => {
+          ? state.pokemons.sort((a, z) => {
               if (a.name.toLowerCase() > z.name.toLowerCase()) return 1;
               if (z.name.toLowerCase() > a.name.toLowerCase()) return -1;
               return 0;
             })
-          : state.allPokemons.sort((a, z) => {
+          : state.pokemons.sort((a, z) => {
               if (a.name.toLowerCase() > z.name.toLowerCase()) return -1;
               if (z.name.toLowerCase() > a.name.toLowerCase()) return 1;
               return 0;
@@ -103,12 +103,12 @@ const reducer = (state = initialState, action) => {
 
       return {
         ...state,
-        allPokemons: PokemonFilteredByName,
+        pokemons: PokemonFilteredByName,
       };
     case FILTER_BY_ATTACK:
       const PokemonsFilteredByAttack =
         action.payload === "ascendente"
-          ? state.allPokemons.sort((h, l) => {
+          ? state.pokemons.sort((h, l) => {
               if (h.attack > l.attack) return -1;
               if (l.attack > h.attack) return 1;
               return 0;

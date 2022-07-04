@@ -15,7 +15,7 @@ import "./Home.css";
 import NavBar from "../NavBar/NavBar";
 import SearchBar from "../SearchBar/SearchBar";
 import HomeBG from "../../utils/images/HomeBG.jpg";
-import error404 from "../../utils/images/error404.png"
+import error404 from "../../utils/images/error404.png";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -30,7 +30,6 @@ export default function Home() {
     setCurrentPage(pageNumber);
   };
 
-  
   const currentPokemon = allPokemons.slice(
     indexOfFirstPokemon,
     indexOfLastPokemon
@@ -43,7 +42,6 @@ export default function Home() {
     dispatch(getAllPokemons());
     setRenderPage(allPokemons);
     setCurrentPage(1);
-    return () => {};
   }, [dispatch, getAllPokemons]);
 
   //-------------handle---------------//
@@ -72,7 +70,9 @@ export default function Home() {
 
   function handleFilterByName(e) {
     e.preventDefault();
+    console.log(allPokemons);
     dispatch(filterByName(e.target.value));
+    console.log(allPokemons);
     setRenderPage(e.target.value);
   }
   function handleFilterByTypes(e) {
@@ -86,7 +86,6 @@ export default function Home() {
     dispatch(filterByApiOrDb(e.target.value));
     setRenderPage(e.target.value);
   }
-
 
   return (
     <div>
@@ -203,8 +202,8 @@ export default function Home() {
           </div>
         </div>
       ) : (
-        <Link className="linkCss" to='/Home'>
-        <img className="error" src={error404} alt='dwds'/>
+        <Link className="linkCss" to="/Home">
+          <img className="error" src={error404} alt="dwds" />
         </Link>
       )}
     </div>

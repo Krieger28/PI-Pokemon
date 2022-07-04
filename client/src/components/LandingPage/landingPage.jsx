@@ -16,19 +16,15 @@ function LandingPage() {
         <img className="Pokemonpng" src={pokemon} alt="errrorrr" />
         <img className="Welcomepng" src={welcome} alt="come" />
       </div>
-      <div className="enterLanding">
-      </div>
-        <Link to="/Home">
-            <div className="mergePokes">
-          
+      <div className="enterLanding"></div>
+      <Link to="/Home">
+        <div className="mergePokes">
           <img className="activebutton" src={activeball} alt="404"></img>
           <img className="pokeButton" src={pokeball} alt="404"></img>
-          </div>
-        </Link>
-      
+        </div>
+      </Link>
     </div>
   );
 }
-
 
 export default LandingPage;
